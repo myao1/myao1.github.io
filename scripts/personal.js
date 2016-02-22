@@ -5,3 +5,7 @@ var testing = function(){
 		return true;
 	}
 };
+
+//var testing2 = function(){
+//	$('starter').
+//}
