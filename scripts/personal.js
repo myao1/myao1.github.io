@@ -6,6 +6,11 @@ var testing = function(){
 	}
 };
 
+$('a#notclick').click(function() {
+	alert("You shouldn't have done that. Should not have done that");
+	
+});
+
 //var testing2 = function(){
 //	$('starter').
 //}
