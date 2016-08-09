@@ -4,8 +4,29 @@ body{
 
 h2 {
 	color:black;
+	font-family: "Impact, Charcoal, sans-serif"
+}
+
+h3 {
+	font-family: "Verdana, Geneva, sans-serif"
+}
+
+p{
+	font-family: "Arial, Arial, Helvetica, sans-serif"
 }
 
 .test{
 	border-radius: 50%;
+}
+
+section#aboutme{
+	float: left;
+	margin: 15px;
+	border-bottom: thick solid dodgerblue;
+}
+
+section#bootstrap {
+	clear: left;
+	margin:20px;
+	border: thick solid deepskyblue;
 }
