@@ -38,6 +38,13 @@ section#bootstrap {
 	height: auto;
 }
 
+.flex-item{
+	background-color: cornflowerblue;
+	width: auto;
+	height: 150px;
+	margin: 10px;
+}
+
 .position-relative{
 	position: relative;
 }
@@ -48,5 +55,5 @@ section#bootstrap {
 
 .position-fixed{
 	position: fixed;
-	background-color: paleturquoise;
+	background-color: lightgreen ;
 }
