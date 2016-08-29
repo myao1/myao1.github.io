@@ -30,3 +30,22 @@ section#bootstrap {
 	margin:20px;
 	border: thick solid deepskyblue;
 }
+
+.flex-container{
+	display: -webkit-flex;
+	display: flex;
+	width: auto;
+	height: auto;
+}
+
+.position-relative{
+	position: relative;
+}
+
+.position-static{
+	position: static;
+}
+
+.position-fixed{
+	position: fixed;
+}

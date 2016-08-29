@@ -14,3 +14,11 @@ $('a#notclick').click(function() {
 //var testing2 = function(){
 //	$('starter').
 //}
+
+function canvasDrawing() {
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	ctx.moveTo(0,0);
+	ctx.lineTo(200, 100);
+	ctx.stroke();
+}
