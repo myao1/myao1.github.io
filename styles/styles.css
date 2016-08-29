@@ -48,4 +48,5 @@ section#bootstrap {
 
 .position-fixed{
 	position: fixed;
+	background-color: paleturquoise;
 }
