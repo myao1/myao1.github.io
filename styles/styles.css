@@ -34,6 +34,7 @@ section#bootstrap {
 .flex-container{
 	display: -webkit-flex;
 	display: flex;
+	flex-direction: row;
 	width: auto;
 	height: auto;
 }
