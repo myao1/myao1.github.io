@@ -57,10 +57,11 @@ section#bootstrap {
 	font-weight: bold;
 }
 
-
+/*
 .flex-item:first-child{
-	margin-left: 50px;
+	margin-left: 10px;
 }
+*/
 
 .position-relative{
 	position: relative;

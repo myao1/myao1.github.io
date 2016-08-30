@@ -11,6 +11,9 @@ $('a#notclick').click(function() {
 	
 });
 
+var changeColorButton = document.getElementById("changeColor");
+changeColorButton.addEventListener('click', changeFontColor(red));
+
 //var testing2 = function(){
 //	$('starter').
 //}
