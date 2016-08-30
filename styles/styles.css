@@ -42,6 +42,8 @@ section#bootstrap {
 .flex-item{
 	background-color: cornflowerblue;
 	width: auto;
+	padding-left: 1em;
+	padding-right: 1em;
 	height: max-content;
 	margin: 10px;
 }
