@@ -41,7 +41,7 @@ section#bootstrap {
 }
 
 .flex-item{
-	background-color: cornflowerblue;
+	background-color: slategray;
 	width: auto;
 	height: max-content;
 	margin: 10px;
@@ -50,7 +50,11 @@ section#bootstrap {
 .flex-item > div {
 	padding-left: 1em;
 	padding-right: 1em;
+	font-family: "Times New Roman", Times, sans-serif;
+	font-size: 0.75em;
+	font-weight: bold;
 }
+
 
 .flex-item:first-child{
 	margin-left: 50px;
