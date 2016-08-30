@@ -22,3 +22,12 @@ function canvasDrawing() {
 	ctx.lineTo(200, 100);
 	ctx.stroke();
 }
+
+function moveStuffAround(){
+	var e = document.getElementById();
+}
+
+function changeFontColor(color){
+	var section = document.getElementById("changestyles");
+	section.firstChild.style.color = color;
+}

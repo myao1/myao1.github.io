@@ -22,6 +22,7 @@ p{
 section#aboutme{
 	float: left;
 	margin: 15px;
+	margin-top: 50px;
 	border-bottom: thick solid dodgerblue;
 }
 
@@ -41,7 +42,7 @@ section#bootstrap {
 }
 
 .flex-item{
-	background-color: slategray;
+	background-color: bisque;
 	width: auto;
 	height: max-content;
 	margin: 10px;
@@ -51,7 +52,8 @@ section#bootstrap {
 	padding-left: 1em;
 	padding-right: 1em;
 	font-family: "Times New Roman", Times, sans-serif;
-	font-size: 0.75em;
+	color: rebeccapurple;
+	font-size: 1.2em;
 	font-weight: bold;
 }
 
