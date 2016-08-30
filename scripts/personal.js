@@ -1,3 +1,12 @@
+$(document).ready(function() {
+	var changeColorButton = document.getElementById("changeColor");
+	changeColorButton.addEventListener('click', changeFontColor(red));
+});
+
+//var testing2 = function(){
+//	$('starter').
+//}
+
 var testing = function(){
 	if(1 < 2){
 		return false;
@@ -6,17 +15,6 @@ var testing = function(){
 	}
 };
 
-$('a#notclick').click(function() {
-	alert("You shouldn't have done that. Should not have done that");
-	
-});
-
-var changeColorButton = document.getElementById("changeColor");
-changeColorButton.addEventListener('click', changeFontColor(red));
-
-//var testing2 = function(){
-//	$('starter').
-//}
 
 function canvasDrawing() {
 	var c = document.getElementById("myCanvas");
