@@ -35,6 +35,7 @@ section#bootstrap {
 	display: -webkit-flex;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	width: max-content;
 	height: auto;
 }
