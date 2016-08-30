@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var changeColorButton = document.getElementById("changeColor");
+	var changeColorButton = document.getElementById("colorButton");
 	changeColorButton.addEventListener('click', changeFontColor("red"));
 });
 
@@ -29,6 +29,6 @@ function moveStuffAround(){
 }
 
 function changeFontColor(color){
-	var section = document.getElementById("changestyles");
-	section.firstChild.style.color = color;
+	var x = document.getElementById("changetextcolor");
+	x.style.color = color;
 }
