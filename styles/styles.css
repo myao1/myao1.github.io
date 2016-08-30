@@ -42,8 +42,12 @@ section#bootstrap {
 .flex-item{
 	background-color: cornflowerblue;
 	width: auto;
-	height: 150px;
+	height: max-content;
 	margin: 10px;
+}
+
+.flex-item:first-child{
+	margin-left: 50px;
 }
 
 .position-relative{
