@@ -1,7 +1,8 @@
 $(document).ready(function() {
 	var changeColorButton = document.getElementById("colorButton");
 	// changeColorButton.addEventListener('click', changeFontColor("red"));
-	changeColorButton.addEventListener('onclick', testChange());
+	testChange();
+	//changeColorButton.addEventListener('onclick', testChange());
 });
 
 //var testing2 = function(){
@@ -37,5 +38,6 @@ function changeFontColor(color){
 
 function testChange(){
 	var x = document.getElementById("changetextcolor");
+	x.style.backgroundColor = "powderblue";
 	x.style.borderRadius = "50%";
 }
