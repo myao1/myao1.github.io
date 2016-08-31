@@ -48,15 +48,12 @@
 				</div>
 			</div>
 		</section>
-		<section id="canvasDrawing">
-			<div class="flex-container">
-				<button type="button" onclick="canvasDrawing()">Draw!</button>
-				<canvas id="myCanvas" width="500" height="500">
-				</canvas>
-			</div>
+		<section id="canvasDrawing" class="flex-container-vertical">
+			<button type="button" onclick="canvasDrawing()">Draw!</button>
+			<canvas id="myCanvas" width="500" height="500"></canvas>
 		</section>
 		<section id="changestyles">
-			<button type="button" id="colorButton">Change color</button>
+			<button type="button" id="colorButton" onclick="changeFontColor('red')">Change color</button>
 			<div id="changetextcolor">
 				<p>
 					Change the color of this text

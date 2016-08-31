@@ -1,28 +1,21 @@
 $(document).ready(function() {
-	var changeColorButton = document.getElementById("colorButton");
+	// var changeColorButton = document.getElementById("colorButton");
 	// changeColorButton.addEventListener('click', changeFontColor("red"));
-	testChange();
+	// testChange();
+	// changeFontColor("green");
 	//changeColorButton.addEventListener('onclick', testChange());
 });
-
-//var testing2 = function(){
-//	$('starter').
-//}
-
-var testing = function(){
-	if(1 < 2){
-		return false;
-	}else{
-		return true;
-	}
-};
 
 
 function canvasDrawing() {
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
-	ctx.moveTo(0,0);
-	ctx.lineTo(200, 100);
+	ctx.moveTo(50,50);
+	ctx.lineTo(300, 300);
+	ctx.stroke();
+
+	ctx.moveTo(300, 50);
+	ctx.lineTo(50, 300);
 	ctx.stroke();
 }
 
