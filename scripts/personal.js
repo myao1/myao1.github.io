@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	var changeColorButton = document.getElementById("colorButton");
-	changeColorButton.addEventListener('click', changeFontColor("red"));
+	// changeColorButton.addEventListener('click', changeFontColor("red"));
+	changeColorButton.addEventListener('onclick', testChange());
 });
 
 //var testing2 = function(){
@@ -31,4 +32,10 @@ function moveStuffAround(){
 function changeFontColor(color){
 	var x = document.getElementById("changetextcolor");
 	x.style.color = color;
+	x.style.backgroundColor = "powderblue";
+}
+
+function testChange(){
+	var x = document.getElementById("changetextcolor");
+	x.style.borderRadius = "50%";
 }
