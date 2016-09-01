@@ -7,16 +7,5 @@
     "windows": {
         "command": "explorer.exe"
     },
-    "args": ["${file}"],
-    "tasks": [
-        {
-            //Browser Debug
-            "taskName": "lessc",
-            "co"
-            "isBuildCommand": true,
-            "isTestCommand": true,
-            "showOutput": "silent",
-            "args": ["styles.less", "styles.css"]
-        }
-    ]
+    "args": ["${file}"]
 }
