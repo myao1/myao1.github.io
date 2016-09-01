@@ -1,11 +1,19 @@
 @padding: 5px;
+@darkprimarycolor: #388E3C;
+@primarycolor: #4CAF50;
+@lightprimarycolor: #C8E6C9;
+@textcolor: #FFFFFF;
+@accentcolor: #009688;
+@primarytext: #212121;
+@secondarytext: #757575;
+@dividercolor: #BDBDBD;
 
 body{
-	background-color:white;
+	background-color: @darkprimarycolor;
 }
 
 h2 {
-	color:black;
+	color:@textcolor;
 	font-family: "Impact, Charcoal, sans-serif"
 }
 
@@ -25,17 +33,17 @@ section#aboutme{
 	float: left;
 	margin: 15px;
 	margin-top: 50px;
-	border-bottom: thick solid dodgerblue;
+	border-bottom: thick solid @dividercolor;
 }
 
 section#bootstrap {
 	clear: left;
 	margin:20px;
-	border: thick solid deepskyblue;
+	border: thick solid @dividercolor;
 }
 
 section#canvasDrawing {
-	border: thin dashed rebeccapurple;
+	border: thin dashed @accentcolor;
 }
 
 .flex-container{
@@ -48,29 +56,26 @@ section#canvasDrawing {
 }
 
 .flex-container-vertical{
-	display: -webkit-flex;
-	display: flex;
+	.flex-container;
 	flex-direction: column;
-	align-items: center;
-	width: max-content;
-	height: auto;
 }
 
 .flex-item{
-	background-color: bisque;
+	background-color: @primarycolor;
 	width: auto;
 	height: max-content;
 	margin: 10px;
+
+	> div{
+		padding-left: 1em;
+		padding-right: 1em;
+		font-family: "Times New Roman", Times, sans-serif;
+		color: @primarytext;
+		font-size: 1.2em;
+		font-weight: bold;
+	}
 }
 
-.flex-item > div {
-	padding-left: 1em;
-	padding-right: 1em;
-	font-family: "Times New Roman", Times, sans-serif;
-	color: rebeccapurple;
-	font-size: 1.2em;
-	font-weight: bold;
-}
 
 /*
 .flex-item:first-child{
@@ -88,5 +93,5 @@ section#canvasDrawing {
 
 .position-fixed{
 	position: fixed;
-	background-color: lightgreen ;
+	background-color: @accentcolor ;
 }
