@@ -74,6 +74,7 @@ section#canvasDrawing {
 /*
 .flex-item:first-child{
 	margin-left: 10px;
+	transform: matrix(1, .50, .55, 1, 0, 0);
 }
 */
 .position-relative {
@@ -87,7 +88,32 @@ section#canvasDrawing {
   background-color: #009688;
 }
 .translate {
-  -ms-transform: translate(50px, 100px);
-  -webkit-transform: translate(50px, 100px);
-  transform: translate(50px, 100px);
+  -ms-transform: translate(100px, 0px);
+  -webkit-transform: translate(100px, 0px);
+  transform: translate(100px, 0px);
+  transition: transform 2s;
+}
+.rotate {
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  transition: transform 2s;
+}
+.scale {
+  -ms-transform: scale(0.5, 0.75);
+  -webkit-transform: scale(0.5, 0.75);
+  transform: scale(0.5, 0.75);
+  transition: transform 2s;
+}
+.skewY {
+  -ms-transform: skewY(50deg);
+  -webkit-transform: skewY(50deg);
+  transform: skewY(50deg);
+  transition: transform 2s;
+}
+.skewX {
+  -ms-transform: skewX(50deg);
+  -webkit-transform: skewX(50deg);
+  transform: skewX(50deg);
+  transition: transform 2s;
 }

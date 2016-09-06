@@ -47,10 +47,42 @@ function mytranslate(){
 	x.addClass("translate");
 }
 
+function rotate(){
+	var x = $("#2dtransform");
+	x.addClass("rotate");
+}
+
+function scale(){
+	var x = $("#2dtransform");
+	x.addClass("scale");
+}
+
+function skewX(){
+	var x = $("#2dtransform");
+	x.addClass("skewX");
+}
+
+function skewY(){
+	var x = $("#2dtransform");
+	x.addClass("skewY");
+}
+
 function reset2d(){
-	var x = $("2dtransform");
+	var x = $("#2dtransform");
 	if(x.hasClass("translate")){
 		x.removeClass("translate");
+	}
+	if(x.hasClass("rotate")){
+		x.removeClass("rotate");
+	}
+	if(x.hasClass("scale")){
+		x.removeClass("scale");
+	}
+	if(x.hasClass("skewY")){
+		x.removeClass("skewY");
+	}
+	if(x.hasClass("skewX")){
+		x.removeClass("skewX");
 	}
 }
 
