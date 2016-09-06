@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	</head>
 	<body>
-		<div id="navigation" class="nav-bar position-fixed flex-container">
+		<div id="navigation" class="nav-bar position-fixed flex-container-horizontal">
 			<a href="index.html" id="home" class="flex-item">
 				<svg width="50" height="50">
 					<rect x="0" y="0" width="25" height="25" stroke="yellow" fill="blue" stroke-width="1" />
@@ -42,8 +42,14 @@
 			<p>Playing wtih bootstrap and bootstrap's assets</P>
 			<div class="container-fluid">
 				<div id="starter" class="row">
-					<div class="col-md-4"><a id="notclick" href="http://www.google.com" class="btn-default">Don't click me</a></div>
-					<div class="col-md-4"><a href="games/firstgame.html" class="btn-primary test">Click me</a></div>
+					<div class="col-md-4">
+						<button id="showtest" onclick="toggleDisplay()" class="btn-info">Extra info</button>
+						<div id="moreInfo" class="page-style" style="display:none;">Some extra information that's been hidden
+						</div>
+					</div>
+					<div class="col-md-4">
+						<button>Another action</button>
+					</div>
 					<div class="col-md-4"><button class="btn-warning test">Warning</button></div>
 				</div>
 			</div>
@@ -58,6 +64,36 @@
 				<p>
 					Change the color of this text
 				</p>
+			</div>
+		</section>
+		<section id="transforms" class="flex-container-vertical">
+			<header>
+				<h3>Transforms on optical illusions</h3>
+			</header>
+			<div class="2d" width="1200" height="1000">
+				<div id="2dtransform" class="2d-transform">
+					<img src="images\hollow-face-illusionartwork-david-mack.jpg" alt="hollow face optical illusion" title="hollow face illusion" width="900" height="636">
+				</div>
+				<div id="2dbuttons">
+					<button type="button" id="translate" onclick="mytranslate()">Translate</button>
+					<button type="button" id="rotate">Rotate</button>
+					<button type="button" id="scale">Scale</button>
+					<button type="button" id="skewX">Skew X</button>
+					<button type="button" id="skewY">Skew Y</button>
+					<button type="button" id="matrix">Matrix</button>
+				</div>
+				<div>
+					<button type="button" id="reset" onclick="reset2d()">Reset</button>
+				</div>
+			</div>
+			<div class="3d">
+				<div id="3dtransform" class="3d-transform">
+				</div>
+				<div id="3dbuttons">
+				</div>
+				<div>
+					<button type="button">Reset</button>
+				</div>
 			</div>
 		</section>
 	</body>

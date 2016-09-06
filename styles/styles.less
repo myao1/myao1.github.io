@@ -29,6 +29,12 @@ p{
 	border-radius: 50%;
 }
 
+.page-style{
+	background-color: @primarycolor;
+	border: groove @accentcolor;
+	color: @primarytext;
+}
+
 section#aboutme{
 	float: left;
 	margin: 15px;
@@ -43,16 +49,20 @@ section#bootstrap {
 }
 
 section#canvasDrawing {
-	border: thin dashed @accentcolor;
+	border: thin dashed @dividercolor;
 }
 
 .flex-container{
 	display: -webkit-flex;
 	display: flex;
-	flex-direction: row;
 	align-items: center;
 	width: max-content;
 	height: auto;
+}
+
+.flex-container-horizontal{
+	.flex-container;
+	flex-direction: row;
 }
 
 .flex-container-vertical{
@@ -71,6 +81,7 @@ section#canvasDrawing {
 		padding-right: 1em;
 		font-family: "Times New Roman", Times, sans-serif;
 		color: @primarytext;
+		background-color: @lightprimarycolor;
 		font-size: 1.2em;
 		font-weight: bold;
 	}
@@ -94,4 +105,10 @@ section#canvasDrawing {
 .position-fixed{
 	position: fixed;
 	background-color: @accentcolor ;
+}
+
+.translate{
+	-ms-transform: translate(50px, 100px);
+	-webkit-transform: translate(50px, 100px);
+	transform: translate(50px, 100px);
 }
