@@ -4,7 +4,7 @@ $(document).ready(function() {
 	// testChange();
 	// changeFontColor("green");
 	//changeColorButton.addEventListener('onclick', testChange());
-	
+	geo = $("#geography");
 });
 
 
@@ -95,7 +95,7 @@ function reset2d(){
 	}
 }
 
-var geo = $("#geography");
+var geo;
 
 function getLocation(){
 	if(navigator.geolocation){
