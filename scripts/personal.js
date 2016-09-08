@@ -106,7 +106,11 @@ function getLocation(){
 }
 
 function showPosition(position){
-	geo.html("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+	geo.html("<p>Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude + "</p>");
+
+	var latlon = position.coords.latitude + "," + position.coords.longitude;
+	var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&sensor=false";
+	geo.append("<img src='" + img_url+"'>");
 }
 
 function showError(error){
