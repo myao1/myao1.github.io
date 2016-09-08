@@ -1,3 +1,5 @@
+var geo;
+
 $(document).ready(function() {
 	// var changeColorButton = document.getElementById("colorButton");
 	// changeColorButton.addEventListener('click', changeFontColor("red"));
@@ -95,7 +97,7 @@ function reset2d(){
 	}
 }
 
-var geo;
+
 
 function getLocation(){
 	if(navigator.geolocation){
@@ -128,6 +130,74 @@ function showError(error){
 			geo.html("unknown error occurred");
 			break;
 	}
+}
+
+function storeLocal(key, value){
+	if(typeof(Storage) !== "undefined"){
+		localStorage.setItem(key, value);
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function retrieveLocal(key){
+	if(typeof(Storage) !== "undefined"){
+		var value = localStorage.getItem(key);
+		if(value !== "undefined"){
+			return value;
+		}else{
+			return false;
+		}
+	}else{
+		return false;
+	}
+}
+
+function localClicks(){
+	var count = retrieveLocal("clicks");
+	if(!count){
+		count = 1;
+	}else{
+		count = Number(count);
+		count++;
+	}
+	storeLocal("clicks", count.toString());
+	$("#localClicks").html("<p>" + count + "</p>");
+}
+
+function storeSession(key, value){
+	if(typeof(Storage) !== "undefined"){
+		sessionStorage.setItem(key, value);
+		return true;
+	}else{
+		return false;
+	}
+}
+
+function retrieveSession(key){
+	if(typeof(Storage)!== "undefined"){
+		var value = sessionStorage.getItem(key);
+		if(value !== "undefined"){
+			return value;
+		}else{
+			return false;
+		}
+	}else{
+		return false;
+	}
+}
+
+function sessionClicks(){
+	var count = retrieveSession("clicks");
+	if(!count){
+		count = 1;
+	}else{
+		count = Number(count);
+		count++;
+	}
+	storeSession("clicks", count.toString());
+	$("#sessionClicks").html("<p>" + count + "</p>");
 }
 
 function testChange(){

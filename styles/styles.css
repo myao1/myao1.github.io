@@ -16,7 +16,7 @@ p {
 }
 .page-style {
   background-color: #4CAF50;
-  border: groove #009688;
+  border: groove #BDBDBD;
   color: #212121;
 }
 section#aboutme {
@@ -70,6 +70,13 @@ section#canvasDrawing {
   background-color: #C8E6C9;
   font-size: 1.2em;
   font-weight: bold;
+}
+.flex-button {
+  background-color: #009688;
+  width: auto;
+  height: max-content;
+  margin: 8px;
+  color: #212121;
 }
 /*
 .flex-item:first-child{
