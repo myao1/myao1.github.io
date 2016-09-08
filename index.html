@@ -24,6 +24,18 @@
 			<a href="#bootstrap" id="secondnav" class="flex-item">
 				<div>Bootstrap</div>
 			</a>
+			<a href="#canvasDrawing" id="thirdnav" class="flex-item">
+				<div>Canvas</div>
+			</a>
+			<a href="#changestyles" id="fourthnav" class="flex-item">
+				<div>Style change</div>
+			</a>
+			<a href="#transforms" id="fifthnav" class="flex-item">
+				<div>Transforms</div>
+			</a>
+			<a href="#animations" id="sixthnav" class="flex-item">
+				<div>Animations</div>
+			</a>
 		</div>
 		<section id="aboutme">
 			<article>
@@ -66,7 +78,7 @@
 				</p>
 			</div>
 		</section>
-		<section id="transforms" class="flex-container-vertical">
+		<section id="transforms" class="flex-container-vertical page-style">
 			<header>
 				<h3>Transforms on optical illusions</h3>
 			</header>
@@ -80,7 +92,7 @@
 					<button type="button" id="scale" onclick="scale()">Scale</button>
 					<button type="button" id="skewX" onclick="skewX()">Skew X</button>
 					<button type="button" id="skewY" onclick="skewY()">Skew Y</button>
-					<button type="button" id="matrix">Matrix</button>
+					<button type="button" id="matrix" onclick="matrix()">Matrix</button>
 				</div>
 				<div>
 					<button type="button" id="reset" onclick="reset2d()">Reset</button>
@@ -92,9 +104,20 @@
 				<div id="3dbuttons">
 				</div>
 				<div>
-					<button type="button">Reset</button>
+					<button type="button" onclick="reset3d()">Reset</button>
 				</div>
 			</div>
 		</section>
+		<section id="animations" class="flex-container-horizontal">
+			<div class="animation">Hello</div>
+		</section>
+		<section id="geolocation" class="flex-container-vertical page-style">
+			<div class="geography flex-item">
+
+			</div>
+			<div class="flex-item" id="geoButton">
+				<button type="button" id="getLocation" onclick="getLocation()">Where am I?</button>
+			</div>
+		</section> 
 	</body>
 </html>

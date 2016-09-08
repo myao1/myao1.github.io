@@ -67,6 +67,11 @@ function skewY(){
 	x.addClass("skewY");
 }
 
+function matrix(){
+	var x = $("#2dtransform");
+	x.addClass("matrix");
+}
+
 function reset2d(){
 	var x = $("#2dtransform");
 	if(x.hasClass("translate")){
@@ -84,6 +89,40 @@ function reset2d(){
 	if(x.hasClass("skewX")){
 		x.removeClass("skewX");
 	}
+	if(x.hasClass("matrix")){
+		x.removeClass("matrix");
+	}
+}
+
+var geo = $("#geography");
+
+function getLocation(){
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(showPosition, showError);
+	}else{
+		geo.html("Geolocation is not supported by this browser");
+	}
+}
+
+function showPosition(position){
+	geo.html("Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude);
+}
+
+function showError(error){
+	switch(error.code){
+		case error.PERMISSION_DENIED:
+			geo.html("User denied teh request for location");
+			break;
+		case error.POSITION_UNAVAILABLE:
+			geo.html("Location info is unavailable");
+			break;
+		case error.TIMEOUT:
+			geo.html("the request timed out");
+			break;
+		case error.UNKNOWN_ERROR:
+			geo.html("unknown error occurred");
+			break;
+	}
 }
 
 function testChange(){
@@ -95,4 +134,5 @@ function testChange(){
 	//jquery
 	$("#changetextcolor").addClass("test");
 	// x.style.borderRadius = "50%";
+	
 }
