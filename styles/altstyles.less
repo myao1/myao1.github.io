@@ -1,12 +1,12 @@
 @padding: 5px;
-@darkprimarycolor: #388E3C;
-@primarycolor: #4CAF50;
-@lightprimarycolor: #C8E6C9;
-@textcolor: #FFFFFF;
-@accentcolor: #009688;
-@primarytext: #212121;
-@secondarytext: #757575;
-@dividercolor: #BDBDBD;
+@darkprimarycolor: #2F4550;
+@primarycolor: #586F7C;
+@lightprimarycolor: #B8DBD9;
+@textcolor: #EFFFC8;
+@accentcolor: #000000;
+@primarytext: #EFFFC8;
+@secondarytext: #EFFFC8;
+@dividercolor: #2F4550;
 
 body{
 	background-color: @darkprimarycolor;
@@ -14,15 +14,17 @@ body{
 
 h2 {
 	color:@textcolor;
-	font-family: "Impact, Charcoal, sans-serif"
+	font-family: "Impact, Charcoal, sans-serif";
 }
 
 h3 {
-	font-family: "Verdana, Geneva, sans-serif"
+    color: @textcolor;
+	font-family: "Verdana, Geneva, sans-serif";
 }
 
 p{
-	font-family: "Arial, Arial, Helvetica, sans-serif"
+	font-family: "Arial, Arial, Helvetica, sans-serif";
+    color: @textcolor;
 }
 
 .test{
@@ -124,7 +126,7 @@ section#canvasDrawing {
 
 .position-fixed{
 	position: fixed;
-	background-color: @accentcolor;
+	background-color: @primarycolor;
 }
 
 .translate{

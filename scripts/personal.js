@@ -6,7 +6,7 @@ $(document).ready(function() {
 	// testChange();
 	// changeFontColor("green");
 	//changeColorButton.addEventListener('onclick', testChange());
-	geo = $("#geography");
+	window.geo = $("#geography");
 });
 
 
@@ -211,3 +211,63 @@ function testChange(){
 	// x.style.borderRadius = "50%";
 	
 }
+
+var Managers = {};
+Managers.CssManager = {
+	addStyleSheet: function(id, url){
+		var newStyleSheet = document.createElement("link");
+		newStyleSheet.setAttribute("rel", "stylesheet");
+		newStyleSheet.setAttribute("type", "text/css");
+		newStyleSheet.setAttribute("id", id);
+		newStyleSheet.setAttribute("href", url);
+		document.getElementsByTagName("head")[0].appendChild(newStyleSheet);
+	},
+
+	removeStyleSheet: function(id){
+		var currentStyleSheet = document.getElementById(id);
+		if(currentStyleSheet){
+			currentStyleSheet.parentNode.removeChild(currentStyleSheet);
+		}
+	},
+
+	swapStyleSheet: function(id, url){
+		this.removeStyleSheet(id);
+		this.addStyleSheet(id, url);
+	}
+
+}
+
+var Private = {};
+Private.CssManager = (function(){
+	var doc = document;
+	var setAttributes = function(element, attributes){
+		for(attribute in attributes){
+			element[attribute] = attributes[attribute];
+		}
+	}
+
+	return{
+		addStyleSheet: function(id, url){
+			var newStyleSheet = doc.createElement("link");
+			setAttributes(newStyleSheet, {
+				rel: "stylesheet",
+				type: "text/css",
+				id: id,
+				href: url
+			});
+			doc.getElementsByTagName("head")[0].appendChild(newStyleSheet);
+		},
+
+		removeStyleSheet: function(id){
+			var currentStyleSheet = doc.getElementById(id);
+			if(currentStyleSheet){
+				currentStyleSheet.parentNode.removeChild(currentStyleSheet);
+			}
+		},
+
+		swapStyleSheet: function(id, url){
+			this.removeStyleSheet(id);
+			this.addStyleSheet(id, url);
+		}
+	}
+})();
