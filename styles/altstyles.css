@@ -1,25 +1,25 @@
 body {
-  background-color: #2F4550;
+  background-color: #093A3E;
 }
 h2 {
-  color: #EFFFC8;
+  color: #97C8EB;
   font-family: "Impact, Charcoal, sans-serif";
 }
 h3 {
-  color: #EFFFC8;
+  color: #97C8EB;
   font-family: "Verdana, Geneva, sans-serif";
 }
 p {
   font-family: "Arial, Arial, Helvetica, sans-serif";
-  color: #EFFFC8;
+  color: #97C8EB;
 }
 .test {
   border-radius: 50%;
 }
 .page-style {
-  background-color: #586F7C;
-  border: groove #2F4550;
-  color: #EFFFC8;
+  background-color: #3AAFB9;
+  border: groove #97C8EB;
+  color: #001011;
 }
 rect.btn {
   stroke: #fff;
@@ -34,15 +34,15 @@ section#aboutme {
   float: left;
   margin: 15px;
   margin-top: 50px;
-  border-bottom: thick solid #2F4550;
+  border-bottom: thick solid #97C8EB;
 }
 section#bootstrap {
   clear: left;
   margin: 20px;
-  border: thick solid #2F4550;
+  border: thick solid #97C8EB;
 }
 section#canvasDrawing {
-  border: thin dashed #2F4550;
+  border: thin dashed #97C8EB;
 }
 .flex-container {
   display: -webkit-flex;
@@ -68,7 +68,7 @@ section#canvasDrawing {
   flex-direction: column;
 }
 .flex-item {
-  background-color: #586F7C;
+  background-color: #3AAFB9;
   width: auto;
   height: max-content;
   margin: 10px;
@@ -77,17 +77,17 @@ section#canvasDrawing {
   padding-left: 1em;
   padding-right: 1em;
   font-family: "Times New Roman", Times, sans-serif;
-  color: #EFFFC8;
-  background-color: #B8DBD9;
+  color: #001011;
+  background-color: #64E9EE;
   font-size: 1.2em;
   font-weight: bold;
 }
 .flex-button {
-  background-color: #000000;
+  background-color: #97C8EB;
   width: auto;
   height: max-content;
   margin: 8px;
-  color: #EFFFC8;
+  color: #001011;
 }
 /*
 .flex-item:first-child{
@@ -103,7 +103,7 @@ section#canvasDrawing {
 }
 .position-fixed {
   position: fixed;
-  background-color: #586F7C;
+  background-color: #3AAFB9;
 }
 .translate {
   -ms-transform: translate(100px, 0px);
@@ -147,10 +147,10 @@ section#canvasDrawing {
 @keyframes animating {
   from {
     background-color: red;
-    border: thick solid #000000;
+    border: thick solid #97C8EB;
   }
   to {
-    background-color: #000000;
+    background-color: #97C8EB;
     border: thin dashed red;
   }
 }
