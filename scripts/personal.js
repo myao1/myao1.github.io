@@ -271,3 +271,48 @@ Private.CssManager = (function(){
 		}
 	}
 })();
+
+var closureTesting = (function(){
+	var bufferAr = [
+		'<div id="',
+		'',
+		'" style="position:absolute;top:',
+		'',
+		'"px;left:',
+		'',
+		'"px;width:',
+		'',
+		'"px;height:',
+		'',
+		'px;overflow:hidden;"><img src="',
+		'',
+		'" width="',
+		'',
+		'" height="',
+		'',
+		'" alt="',
+		'',
+		'"></div>'
+	];
+
+	return (function(url, id, width, height, top, left, altText){
+		bufferAr[1] = id;
+		bufferAr[3] = top;
+		bufferAr[5] = left;
+		bufferAr[13] = (bufferAr[7] = width);
+		bufferAr[15] = (bufferAr[9] = height);
+		bufferAr[11] = url;
+		bufferAr[17] = altText;
+		return bufferAr.join('');
+	});
+})();
+
+$(document).ready(function () {
+	$('input[type=radio][name=pagestyling]').change(function(){
+		if(this.value == 'default'){
+			Private.CssManager.swapStyleSheet('mainstyle', 'styles/styles.css');
+		}else if(this.value == 'alternate'){
+			Private.CssManager.swapStyleSheet('mainstyle', 'styles/altstyles.css');
+		}
+	});
+});

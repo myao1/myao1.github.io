@@ -8,7 +8,7 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script type="text/javascript" src="scripts/personal.js"></script>
-		<link rel="stylesheet" type="text/css" id="defaultstyle" href="styles/styles.css">
+		<link rel="stylesheet" type="text/css" id="mainstyle" href="styles/styles.css">
 	</head>
 	<body>
 		<div id="navigation" class="nav-bar position-fixed flex-container-horizontal">
@@ -26,7 +26,6 @@
 					<circle cx="25" cy="25" r="15" stroke="white" fill="red" stroke-width="1" />
 					<circle cx="25" cy="25" r="10" stroke="red" fill="white" stroke-width="1" />
 					<circle cx="25" cy="25" r="5" stroke="white" fill="red" stroke-width="1" />
-					<rect class="btn" x="0" y="0" width="50" height="50" onclick="Private.CssManager.swapStyleSheet('defaultstyle', 'styles/altstyles.css')" />
 				</svg>
 			</div>
 			<a href="#aboutme" id="firstnav" class="flex-item">
@@ -81,12 +80,20 @@
 			<button type="button" onclick="canvasDrawing()">Draw!</button>
 			<canvas id="myCanvas" width="500" height="500"></canvas>
 		</section>
-		<section id="changestyles">
-			<button type="button" id="colorButton" onclick="changeFontColor('red')">Change color</button>
-			<div id="changetextcolor">
-				<p>
-					Change the color of this text
-				</p>
+		<section id="changestyles" class="flex-container-vertical">
+			<div class="flex-item">
+				<button type="button" id="colorButton" onclick="changeFontColor('red')">Change color</button>
+				<div id="changetextcolor">
+					<p>
+						Change the color of this text
+					</p>
+				</div>
+			</div>
+			<div class="flex-item">
+				<form>
+					<input type="radio" name="pagestyling" id="defaultcss" checked="checked" value="default">Default Style
+					<input type="radio" name="pagestyling" id="alternatecss" value="alternate">Alternate Style
+				</form>
 			</div>
 		</section>
 		<section id="transforms" class="flex-container-vertical page-style">
