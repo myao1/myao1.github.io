@@ -1,12 +1,21 @@
+:root {
+  font-size: 16px;
+}
 body {
   background-color: #388E3C;
+}
+body:selection {
+  background-color: #009688;
+  color: #757575;
 }
 h2 {
   color: #FFFFFF;
   font-family: "Impact, Charcoal, sans-serif";
+  font-size: 0.1rem;
 }
 h3 {
   font-family: "Verdana, Geneva, sans-serif";
+  font-size: 2rem;
 }
 p {
   font-family: "Arial, Arial, Helvetica, sans-serif";
@@ -31,7 +40,7 @@ rect.btn {
 section#aboutme {
   float: left;
   margin: 15px;
-  margin-top: 50px;
+  margin-top: 70px;
   border-bottom: thick solid #BDBDBD;
 }
 section#bootstrap {
@@ -41,6 +50,17 @@ section#bootstrap {
 }
 section#canvasDrawing {
   border: thin dashed #BDBDBD;
+}
+section#animations {
+  margin: 50px;
+}
+:target {
+  background-color: ghostwhite;
+}
+#navigation a:hover,
+#navigation div:hover {
+  background-color: #4CAF50;
+  color: #FFFFFF;
 }
 .flex-container {
   display: -webkit-flex;
@@ -153,8 +173,7 @@ section#canvasDrawing {
   }
 }
 div.animation {
-  width: 500px;
-  height: 500px;
+  margin: 15px;
   animation-name: animating;
   animation-duration: 3s;
   animation-timing-function: ease-out;

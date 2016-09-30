@@ -8,17 +8,28 @@
 @secondarytext: #757575;
 @dividercolor: #BDBDBD;
 
+:root{
+	font-size:16px;
+}
+
 body{
 	background-color: @darkprimarycolor;
 }
 
+body:selection{
+	background-color:@accentcolor;
+	color:@secondarytext;
+}
+
 h2 {
 	color:@textcolor;
-	font-family: "Impact, Charcoal, sans-serif"
+	font-family: "Impact, Charcoal, sans-serif";
+	font-size:0.1rem;
 }
 
 h3 {
-	font-family: "Verdana, Geneva, sans-serif"
+	font-family: "Verdana, Geneva, sans-serif";
+	font-size:2rem;
 }
 
 p{
@@ -49,7 +60,7 @@ rect.btn {
 section#aboutme{
 	float: left;
 	margin: 15px;
-	margin-top: 50px;
+	margin-top: 70px;
 	border-bottom: thick solid @dividercolor;
 }
 
@@ -61,6 +72,19 @@ section#bootstrap {
 
 section#canvasDrawing {
 	border: thin dashed @dividercolor;
+}
+
+section#animations{
+	margin: 50px;
+}
+
+:target{
+	background-color:ghostwhite;
+}
+
+#navigation a:hover, #navigation div:hover{
+	background-color:@primarycolor;
+	color:@textcolor;
 }
 
 .flex-container{
@@ -178,8 +202,9 @@ section#canvasDrawing {
 }
 
 div.animation{
-	width: 500px;
-	height: 500px;
+	margin:15px;
+	//width: 500px;
+	//height: 500px;
 	animation-name: animating;
 	animation-duration: 3s;
 	animation-timing-function: ease-out;
