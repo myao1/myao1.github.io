@@ -37,6 +37,12 @@ rect.btn {
 #navigation {
   z-index: 1;
 }
+section:before {
+  content: "";
+  color: #ff0000;
+  background: #00ff00;
+  display: inline-block;
+}
 section#aboutme {
   float: left;
   margin: 15px;
