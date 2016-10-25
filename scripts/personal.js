@@ -200,6 +200,29 @@ function sessionClicks(){
 	$("#sessionClicks").html("<p>" + count + "</p>");
 }
 
+function Route () {
+	var name = '', grade = '';
+
+	Object.defineProperties(name, {
+		newDataProperty: {
+			value: 101,
+			writable: true,
+			enumerable: true,
+			configurable: true
+		},
+		newAccessorProperty:{
+			set: function(x){
+				this.grade = x;
+			},
+			get: function(){
+				return this.grade;
+			},
+			enumerable: true,
+			configurable: true
+		}
+	});
+}
+
 function testChange(){
 	//javascript
 	// var x = document.getElementById("changetextcolor");
@@ -315,4 +338,48 @@ $(document).ready(function () {
 			Private.CssManager.swapStyleSheet('mainstyle', 'styles/altstyles.css');
 		}
 	});
+
+	// Prototype patter
+	var calc = new protospace.Calculator('calcOutput');
+	calc.add(3, calc.tres);
+	calc.multiply(4,5);
+
+	Calculator.prototype.tres = 4;
+	calc.add(3, calc.tres);
+
+	
 });
+
+//Prototype pattern
+var protospace = protospace || {};
+
+protospace.Calculator = function(eq){
+	this.eqCtl = document.getElementById(eq);
+};
+
+protospace.Calculator.prototype = {
+	add: function (x,y){
+		var val = x + y;
+		this.eqCtl.innerHTML += "<br />" + val;
+	},
+	multiply: function(x,y){
+		var val = x*y;
+		this.eqCtl.innerHTML += "<br />" + val;
+	},
+	tres: 3
+};
+
+//Module pattern
+var modulespace = modulespace || {};
+
+modulespace.Calculator = function(eq) {
+	//private variables and functions
+	var targetDiv = document.getElementById(eq);
+
+	return {
+		//public members
+		add: function(x,y){
+			targetDiv.innerHTML = x+y;
+		}
+	};
+};
