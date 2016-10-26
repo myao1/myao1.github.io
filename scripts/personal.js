@@ -1,12 +1,59 @@
 var geo;
 
-$(document).ready(function() {
-	// var changeColorButton = document.getElementById("colorButton");
-	// changeColorButton.addEventListener('click', changeFontColor("red"));
-	// testChange();
-	// changeFontColor("green");
-	//changeColorButton.addEventListener('onclick', testChange());
+$(document).ready(function () {
+	$('input[type=radio][name=pagestyling]').change(function(){
+		if(this.value == 'default'){
+			Private.CssManager.swapStyleSheet('mainstyle', 'styles/styles.css');
+		}else if(this.value == 'alternate'){
+			Private.CssManager.swapStyleSheet('mainstyle', 'styles/altstyles.css');
+		}
+	});
+
 	window.geo = $("#geography");
+
+	var localstore = new LocalStorage();
+	document.getElementById("localClickButton").onclick = localstore.localClicks;
+	//document.getElementById("localClickButton").addEventListener("click", localstore.localClicks);
+
+	var sessionstore = new SessionStorage();
+	//document.getElementById("sessionClickButton").addEventListener()
+	document.getElementById("sessionClickButton").onclick = sessionstore.sessionClicks;
+
+	// Prototype pattern
+	var calc = new protospace.Calculator('calcOutput');
+	calc.add(3, calc.tres);
+	calc.multiply(4,5);
+
+	protospace.Calculator.prototype.tres = 4;
+	calc.add(3, calc.tres);
+
+	//module pattern
+	var calc2 = new modulespace.Calculator('calcOutput');
+	calc2.add(5,5);
+
+	//Revealing module pattern (self invoking example)
+	var calculator = function(eq) {
+		//private members 
+		var eqCtl = document.getElementById(eq),
+			add = function(x,y) {
+				var val = x+y;
+				eqCtl.innerHTML += "<br />Revealing Module: " + val + "<br />";
+			},
+			subtract = function(x,y){
+				var val = x-y;
+				eqCtl.innerHTML += "<br />Revealing Module: " + val + "<br />";
+			};
+
+		return{ 
+			add: add, 
+			subtract: subtract	
+		};
+	}('calcOutput');
+
+	//revealing module pattern
+	calculator.add(9,9);
+	calculator.subtract(4,5);
+	
 });
 
 
@@ -132,73 +179,81 @@ function showError(error){
 	}
 }
 
-function storeLocal(key, value){
-	if(typeof(Storage) !== "undefined"){
-		localStorage.setItem(key, value);
-		return true;
-	}else{
-		return false;
-	}
-}
-
-function retrieveLocal(key){
-	if(typeof(Storage) !== "undefined"){
-		var value = localStorage.getItem(key);
-		if(value !== "undefined"){
-			return value;
+var LocalStorage = function (){
+	var storeLocal = function (key, value){
+		if(typeof(Storage) !== "undefined"){
+			localStorage.setItem(key, value);
+			return true;
 		}else{
 			return false;
 		}
-	}else{
-		return false;
+	};
+	var retrieveLocal = function (key){
+			if(typeof(Storage) !== "undefined"){
+				var value = localStorage.getItem(key);
+				if(value !== "undefined"){
+					return value;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+	};
+	var localClicks = function(){
+		var count = retrieveLocal("clicks");
+		if(!count){
+			count = 1;
+		}else{
+			count = Number(count);
+			count++;
+		}
+		storeLocal("clicks", count.toString());
+		document.getElementById("localClicks").innerHTML = "<p>" + count + "</p>";
 	}
-}
+	
+	return {
+		localClicks:localClicks
+	};
+};
 
-function localClicks(){
-	var count = retrieveLocal("clicks");
-	if(!count){
-		count = 1;
-	}else{
-		count = Number(count);
-		count++;
-	}
-	storeLocal("clicks", count.toString());
-	$("#localClicks").html("<p>" + count + "</p>");
-}
-
-function storeSession(key, value){
-	if(typeof(Storage) !== "undefined"){
-		sessionStorage.setItem(key, value);
-		return true;
-	}else{
-		return false;
-	}
-}
-
-function retrieveSession(key){
-	if(typeof(Storage)!== "undefined"){
-		var value = sessionStorage.getItem(key);
-		if(value !== "undefined"){
-			return value;
+var SessionStorage = function () {
+	var storeSession = function(key, value){
+		if(typeof(Storage) !== "undefined"){
+			sessionStorage.setItem(key, value);
+			return true;
 		}else{
 			return false;
 		}
-	}else{
-		return false;
-	}
-}
-
-function sessionClicks(){
-	var count = retrieveSession("clicks");
-	if(!count){
-		count = 1;
-	}else{
-		count = Number(count);
-		count++;
-	}
-	storeSession("clicks", count.toString());
-	$("#sessionClicks").html("<p>" + count + "</p>");
-}
+	};
+	var retrieveSession = function (key) {
+		if(typeof(Storage)!== "undefined"){
+			var value = sessionStorage.getItem(key);
+			if(value !== "undefined"){
+				return value;
+			}else{
+				return false;
+			}
+		}else{
+			return false;
+		}
+	};
+	var sessionClicks = function () {
+		var count = retrieveSession("clicks");
+		if(!count){
+			count = 1;
+		}else{
+			count = Number(count);
+			count++;
+		}
+		storeSession("clicks", count.toString());
+		document.getElementById("sessionClicks").innerHTML = "<p>" + count + "</p>";
+	};
+	
+	return {
+		sessionClicks:sessionClicks
+	};
+};
 
 function Route () {
 	var name = '', grade = '';
@@ -330,26 +385,6 @@ var closureTesting = (function(){
 	});
 })();
 
-$(document).ready(function () {
-	$('input[type=radio][name=pagestyling]').change(function(){
-		if(this.value == 'default'){
-			Private.CssManager.swapStyleSheet('mainstyle', 'styles/styles.css');
-		}else if(this.value == 'alternate'){
-			Private.CssManager.swapStyleSheet('mainstyle', 'styles/altstyles.css');
-		}
-	});
-
-	// Prototype patter
-	var calc = new protospace.Calculator('calcOutput');
-	calc.add(3, calc.tres);
-	calc.multiply(4,5);
-
-	Calculator.prototype.tres = 4;
-	calc.add(3, calc.tres);
-
-	
-});
-
 //Prototype pattern
 var protospace = protospace || {};
 
@@ -360,11 +395,11 @@ protospace.Calculator = function(eq){
 protospace.Calculator.prototype = {
 	add: function (x,y){
 		var val = x + y;
-		this.eqCtl.innerHTML += "<br />" + val;
+		this.eqCtl.innerHTML += "<br />Prototype: " + val + "<br />";
 	},
 	multiply: function(x,y){
 		var val = x*y;
-		this.eqCtl.innerHTML += "<br />" + val;
+		this.eqCtl.innerHTML += "<br />Prototype: " + val + "<br />";
 	},
 	tres: 3
 };
@@ -379,7 +414,8 @@ modulespace.Calculator = function(eq) {
 	return {
 		//public members
 		add: function(x,y){
-			targetDiv.innerHTML = x+y;
+			targetDiv.innerHTML += "<br />Module: " + (x+y) + "<br />";
 		}
 	};
 };
+
