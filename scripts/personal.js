@@ -182,8 +182,14 @@ function showError(error){
 var LocalStorage = function (){
 	var storeLocal = function (key, value){
 		if(typeof(Storage) !== "undefined"){
-			localStorage.setItem(key, value);
-			return true;
+			try{
+				localStorage.setItem(key, value);
+				return true;
+			} catch (e) {
+				if (e == QUOTA_EXCEEDED_ERR){
+					alert('Storage quota exceeded');
+				}
+			}
 		}else{
 			return false;
 		}
@@ -419,3 +425,20 @@ modulespace.Calculator = function(eq) {
 	};
 };
 
+//Revealing Prototype pattern
+var Calculator = function (eq) {
+	//variables defined here
+	this.eqCtl = document.getElementById(eq);
+};
+
+Calculator.prototype = function () {
+	//functions defined here
+	var add = function (x,y){
+		var val = x + y;
+		this.eqCtl.innerHTML = val;
+	};
+	return {
+		//public members
+		add : add 
+	};
+}();
