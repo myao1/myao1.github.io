@@ -1,3 +1,5 @@
+/// <reference path="C:\Users\michael.yao\typings\jquery\jquery.d.ts" />
+
 var geo;
 
 $(document).ready(function () {
@@ -8,6 +10,7 @@ $(document).ready(function () {
 			Private.CssManager.swapStyleSheet('mainstyle', 'styles/altstyles.css');
 		}
 	});
+
 
 	window.geo = $("#geography");
 
@@ -53,9 +56,30 @@ $(document).ready(function () {
 	//revealing module pattern
 	calculator.add(9,9);
 	calculator.subtract(4,5);
+
+	// $('#loadFromOther').load('index.html', function(){
+	// 	alert('load happened');
+	// });
+
+	document.getElementById('another').addEventListener('click', function(){
+		$('#showtest').click();
+	});
+
+	$('another').blur(function(){
+		alert("blurred");
+	});
+	
 	
 });
 
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+	if(this.readyState == 4 && this.status == 200) {
+		alert(xhr.responseText);
+	}
+};
+xhr.open("GET", "filename", true);
+xhr.send();
 
 function canvasDrawing() {
 	var c = document.getElementById("myCanvas");
