@@ -65,12 +65,29 @@ $(document).ready(function () {
 		$('#showtest').click();
 	});
 
-	$('another').blur(function(){
-		alert("blurred");
+
+	$('h3').on('mouseenter mouseleave mouseup', function(e){
+		$(this).toggleClass('highlight');
+		if(e.type == 'mouseup'){
+			$(this).text('X: ' + e.pageX + ' Y: ' + e.pageY);
+		}
 	});
+
+	$('#warning').click(function(){
+
+		$('#ajaxOutput').show().load('index.html #animations');
+	});
+
+	// $('p, :input').hover(function(){
+	// 	$(this).toggleClass('highlight');
+	// });
 	
 	
 });
+
+function Toggle(div){
+	$(div).toggleClass('highlight');
+}
 
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
