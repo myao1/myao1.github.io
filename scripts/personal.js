@@ -82,6 +82,24 @@ $(document).ready(function () {
 	// 	$(this).toggleClass('highlight');
 	// });
 	
+	var lastScrollPos = 0;
+	$(window).scroll(function() {
+		var st = $(this).scrollTop();
+		// if(st > $(this).height() * 0.04){
+		// 	$('#navigation').addClass('activeNavigation');
+		// }else{
+		// 	$('#navigation').removeClass('activeNavigation');
+		// }
+		if(st > lastScrollPos){
+			$('nav').removeClass('activeNavigation');
+		}else{
+			$('nav').addClass('activeNavigation');
+		}
+		lastScrollPos = st;
+
+	});
+
+
 	
 });
 
@@ -100,15 +118,37 @@ xhr.send();
 
 function canvasDrawing() {
 	var c = document.getElementById("myCanvas");
-	var ctx = c.getContext("2d");
-	ctx.color = "red";
-	ctx.moveTo(50,50);
-	ctx.lineTo(300, 300);
-	ctx.stroke();
+	if(c && c.getContext){
+		var ctx = c.getContext("2d");
 
-	ctx.moveTo(300, 50);
-	ctx.lineTo(50, 300);
-	ctx.stroke();
+		ctx.fillStyle = "red";
+		//ctx.beginPath();
+		ctx.moveTo(50,50);
+		ctx.lineTo(300, 300);
+		ctx.lineTo(25,100);
+		ctx.fill();
+		ctx.stroke();
+
+		ctx.moveTo(300, 50);
+		ctx.lineTo(50, 300);
+		ctx.stroke();
+		//ctx.scale(2, 2);
+		ctx.fillStyle = "black";
+		ctx.moveTo(300, 25);
+		ctx.lineTo(100, 50);
+		ctx.lineTo(50, 150);
+		ctx.fill();
+		ctx.clip();
+
+		var img = new Image();
+		img.onload = function() {
+			ctx.drawImage(img, 0, 0);
+			ctx.lineWidth = 15;
+			ctx.strokeStyle = '#00FFFFFF';
+			ctx.stroke();
+		}
+		img.src = '../myao1.github.io/images/cookiemonster.jpeg';
+	}
 }
 
 function moveStuffAround(){

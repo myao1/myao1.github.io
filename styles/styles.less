@@ -40,6 +40,7 @@ p{
 	border-radius: 50%;
 }
 
+
 .page-style{
 	background-color: @primarycolor;
 	border: groove @dividercolor;
@@ -60,8 +61,57 @@ rect.btn {
 	stroke-opacity:0;
 }
 
-#navigation{
-	z-index:1;
+nav{
+	z-index: 1;
+	position: fixed;
+	opacity: 0;
+	top:-70px;
+	background-color: @accentcolor;
+	transition: all 1s ease;
+	-webkit-transition: all ll 1s ease;
+
+	// &:hover{
+	// 	left: -143px;
+	// 	// animation-name: hidingNavigation;
+	// 	// animation-duration: 1s;
+	// }
+
+	&.activeNavigation{
+		top: 0;
+		opacity: 1;
+		transition: all 1s;
+		-webkit-transition: all 1s;
+	}
+
+	ul {
+		list-style-type: none;
+		height:70px;
+		position:relative;
+		left:-35px;
+
+		li{
+			float: left;
+			
+		}
+
+		li:not(:first-child){
+			padding-top: 7px;
+		}
+	}
+}
+
+#home div{
+	height:70px;
+
+	svg{
+		position:relative;
+		bottom:7px;
+	}
+}
+
+main{
+	position:relative;
+	top:50px;
 }
 
 section:before{
@@ -75,7 +125,6 @@ section:before{
 section#aboutme{
 	float: left;
 	margin: 15px;
-	margin-top: 70px;
 	border-bottom: thick solid @dividercolor;
 }
 
@@ -97,7 +146,36 @@ section#animations{
 	background-color:ghostwhite;
 }
 
-#navigation a:hover, #navigation div:hover{
+input:invalid{
+	border-color:red;
+	border-width: thin;
+
+}
+
+#nameValidation.pass{
+	background-color: green;
+
+	&:after{
+		content: "✓";
+		//color: green;
+		border: 1px solid green;
+	}
+}
+
+#nameValidation.fail{
+	background-color:red;
+
+	&:after{
+		content: "✗";
+		border: 1px solid red;
+	}
+}
+
+input:valid{
+	border: 2px solid green;
+}
+
+nav ul li a:hover, nav ul li a div:hover{
 	background-color:@primarycolor;
 	color:@textcolor;
 }
@@ -118,6 +196,7 @@ section#animations{
 .flex-container-vertical{
 	.flex-container;
 	flex-direction: column;
+	//height: 100%;
 }
 
 .flex-item{
@@ -127,8 +206,11 @@ section#animations{
 	margin: 10px;
 
 	> div{
-		padding-left: 1em;
-		padding-right: 1em;
+		padding: 1em 0.5em 1em 0.5em;
+		margin: 0 0.25em 0 0.25em;
+		position: relative;
+		top: -15px;
+		border-radius: 9%;
 		font-family: "Times New Roman", Times, sans-serif;
 		color: @primarytext;
 		background-color: @lightprimarycolor;
@@ -157,14 +239,6 @@ section#animations{
 	position: relative;
 }
 
-.position-static{
-	position: static;
-}
-
-.position-fixed{
-	position: fixed;
-	background-color: @accentcolor;
-}
 
 .translate{
 	-ms-transform: translate(100px,0px);
