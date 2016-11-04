@@ -11,6 +11,8 @@ $(document).ready(function () {
 		}
 	});
 
+	
+
 
 	window.geo = $("#geography");
 
@@ -129,6 +131,7 @@ function canvasDrawing() {
 		ctx.fill();
 		ctx.stroke();
 
+		ctx.fillStyle = "blue";
 		ctx.moveTo(300, 50);
 		ctx.lineTo(50, 300);
 		ctx.stroke();
