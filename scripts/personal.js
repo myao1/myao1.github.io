@@ -11,10 +11,29 @@ $(document).ready(function () {
 		}
 	});
 
-	
+	var isWeekday = function(){
+		var d = new Date();
+		var n = d.getDay();
+		if(n > 4){
+			return false;
+		}else{
+			return true;
+		}
+	};
 
+	if(isWeekday){
+		document.getElementById("weekdaydonut").style.display = "block";
+		document.getElementById("weekenddonut").style.display = "none";
+	}else{
+		document.getElementById("weekdaydonut").style.display = "none";
+		document.getElementById("weekenddonut").style.display = "block";
+	}
 
 	window.geo = $("#geography");
+
+	//Don't know why this doesn't work
+	//var donuts = new DonutSchedule();
+	//donuts.determineDonutDay;
 
 	var localstore = new LocalStorage();
 	document.getElementById("localClickButton").onclick = localstore.localClicks;
@@ -526,3 +545,33 @@ Calculator.prototype = function () {
 		add : add 
 	};
 }();
+
+var DonutSchedule = function(){
+	var isWeekday = function(){
+		var d = new Date();
+		var n = d.getDay();
+		if(n > 4){
+			return false;
+		}else{
+			return true;
+		}
+	};
+
+	var showDonutButton = function(){
+		if(isWeekday()){
+			document.getElementById("weekdaydonut").style.display = "block";
+			document.getElementById("weekenddonut").style.display = "none";
+			//$(".weekdaydonut").show()
+			//$(".weekenddonut").hide()
+		}else{
+			document.getElementById("weekdaydonut").style.display = "none";
+			document.getElementById("weekenddonut").style.display = "block";
+			//$(".weekdaydonut").hide()
+			//$(".weekenddonut").show()
+		}
+	};
+
+	return {
+		determineDonutDay : showDonutButton
+	};
+};

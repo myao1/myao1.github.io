@@ -6,9 +6,10 @@
 		<meta name="author" content="Michael Yao">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="scripts/jquery.colorbox.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script type="text/javascript" src="scripts/personal.js"></script>
+		<script src="scripts/personal.js"></script>
 		<link rel="stylesheet" id="mainstyle" href="styles/styles.css">
 	</head>
 	<body>
@@ -56,6 +57,11 @@
 				<li>
 					<a href="#animations" id="sixthnav" class="flex-item">
 						<div>Animations</div>
+					</a>
+				</li>
+				<li>
+					<a href="#donuts" id="seventhnav" class="flex-item">
+						<div>Donuts</div>
 					</a>
 				</li>
 			</ul>
@@ -203,6 +209,20 @@
 					<p>more info</p>
 				</details>
 			</section>
+			<section id="lightbox" class="flex-container-vertical page-style">
+				<a href="images/doh.jpg" title="testing" class="img-responsive">Hello Testing this</a>
+				<a href="images/saitama.jpg" title="more testing" class="img-responsive">
+					<img src="images/saitama.jpg" alt="alt text">
+				</a>
+			</section>
+			<section id="donuts" class="flex-container-vertical page-style">
+				<a id="weekdaydonut" href="mailto:yaoninja@gmail.com;michael.yao@perficient.com?subject=Donuts!&body=Hey everyone, %0D%0A%0D%0AI'll be bringing in donuts tomorrow!">
+					<img src="images/donut.png" height="200" width="200">
+				</a>			
+				<a id="weekenddonut" href="mailto:yaoninja@gmail.com?subject=Donuts!&body=Hey everyone, %0D%0A%0D%0AI'll be bringing in donuts Monday!">
+					<img src="images/donut.png" height="200" width="200">
+				</a>
+			</section>
 		</main>
 		<footer>
 			<details>
@@ -210,5 +230,8 @@
 				<p>Last updated on <time datetime="2016-11-02">this day</time>.</p>
 			</details>
 		</footer>
+		<script>
+			$('a.img-responsive').colorbox();
+		</script>
 	</body>
 </html>
