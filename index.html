@@ -9,7 +9,9 @@
 		<script src="scripts/jquery.colorbox.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="scripts/personal.js"></script>
+		<script src="scripts/personalvue.js"></script>
 		<link rel="stylesheet" id="mainstyle" href="styles/styles.css">
 	</head>
 	<body>
@@ -166,6 +168,9 @@
 				</div>
 				<button id="sessionClickButton" class="flex-button" type="button">Click me</button>
 			</section>
+			<section id="vuecounter" class="flex-container-vertical page-style">
+				<button-counter class="flex-button"></button-counter>
+			</section>
 			<section id="jspatterns" class="flex-container-vertical page-style">
 				<header>
 					<h3>Javascript patterns</h3>
@@ -216,18 +221,24 @@
 				</a>
 			</section>
 			<section id="donuts" class="flex-container-vertical page-style">
-				<a id="weekdaydonut" href="mailto:?bcc=Craig.Trulove@perficient.com;Zach.Gay@perficient.com;Venice.Thacker@perficient.com;Will.Sullivan@perficient.com;michael.yao@perficient.com;Chase.Spivey@perficient.com;Matt.Haneburger@perficient.com;Shu.Jackson@perficient.com;Courtney.Dean@perficient.com;Jason.Barrett@perficient.com;george.chang@perficient.com;Nick.Sturdivant@perficient.com;Brian.Ball@perficient.com;Ryan.Selley@perficient.com;TL.Stephanchick@perficient.com;Corey.Smith@perficient.com;Justin.Combs@perficient.com;matt.connolly@perficient.com;bill.veldman@perficient.com;mike.ball@perficient.com;Jeffrey.Correa@perficient.com;Larry.Thomas@perficient.com;ravind.budhiraja@perficient.com;Marshall.Sorenson@perficient.com;Amelie.VonFluegge@perficient.com;Joshua.Hulsey@perficient.com&subject=Donuts!&body=Hey everyone, %0D%0A%0D%0AI'll be bringing in donuts tomorrow!">
-					<img src="images/donut.png" height="200" width="200">
-				</a>			
-				<a id="weekenddonut" href="mailto:?bcc=Craig.Trulove@perficient.com;Zach.Gay@perficient.com;Venice.Thacker@perficient.com;Will.Sullivan@perficient.com;michael.yao@perficient.com;Chase.Spivey@perficient.com;Matt.Haneburger@perficient.com;Shu.Jackson@perficient.com;Courtney.Dean@perficient.com;Jason.Barrett@perficient.com;george.chang@perficient.com;Nick.Sturdivant@perficient.com;Brian.Ball@perficient.com;Ryan.Selley@perficient.com;TL.Stephanchick@perficient.com;Corey.Smith@perficient.com;Justin.Combs@perficient.com;matt.connolly@perficient.com;bill.veldman@perficient.com;mike.ball@perficient.com;Jeffrey.Correa@perficient.com;Larry.Thomas@perficient.com;ravind.budhiraja@perficient.com;Marshall.Sorenson@perficient.com;Amelie.VonFluegge@perficient.com;Joshua.Hulsey@perficient.com&subject=Donuts!&body=Hey everyone, %0D%0A%0D%0AI'll be bringing in donuts Monday!">
+				<a id="vueDonuts" v-bind:href="dateTheEmail()">
 					<img src="images/donut.png" height="200" width="200">
 				</a>
+			</section>
+			<section id="vue" class="flex-container-vertical page-style">
+				<div>
+					<p v-bind:hidden="isHidden">Hide me</p>
+					<button v-on:click="hideThis">{{ buttonText }}</button>
+				</div>
+				<div id="vuewatchtest">
+
+				</div>
 			</section>
 		</main>
 		<footer>
 			<details>
 				<summary>Created by Michael Yao</summary>
-				<p>Last updated on <time datetime="2016-11-02">this day</time>.</p>
+				<p>Last updated on <time datetime="2018-04-10">this day</time>.</p>
 			</details>
 		</footer>
 		<script>

@@ -21,13 +21,13 @@ $(document).ready(function () {
 		}
 	};
 
-	if(isWeekday){
-		document.getElementById("weekdaydonut").style.display = "block";
-		document.getElementById("weekenddonut").style.display = "none";
-	}else{
-		document.getElementById("weekdaydonut").style.display = "none";
-		document.getElementById("weekenddonut").style.display = "block";
-	}
+	// if(isWeekday){
+	// 	document.getElementById("weekdaydonut").style.display = "block";
+	// 	document.getElementById("weekenddonut").style.display = "none";
+	// }else{
+	// 	document.getElementById("weekdaydonut").style.display = "none";
+	// 	document.getElementById("weekenddonut").style.display = "block";
+	// }
 
 	window.geo = $("#geography");
 
