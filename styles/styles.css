@@ -124,11 +124,6 @@ input:invalid {
 input:valid {
   border: 2px solid green;
 }
-nav ul li a:hover,
-nav ul li a div:hover {
-  background-color: #4CAF50;
-  color: #FFFFFF;
-}
 .flex-container {
   display: -webkit-flex;
   display: flex;
@@ -151,6 +146,32 @@ nav ul li a div:hover {
   width: max-content;
   height: auto;
   flex-direction: column;
+}
+ul#navigationByVue > li > a {
+  background-color: #4CAF50;
+  width: auto;
+  height: max-content;
+  margin: 10px;
+}
+ul#navigationByVue > li > a:hover {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+}
+ul#navigationByVue > li > a > div {
+  padding: 1em 0.5em 1em 0.5em;
+  margin: 0 0.25em 0 0.25em;
+  position: relative;
+  top: -15px;
+  border-radius: 91% 5% 0.42857143% 23% 15%;
+  font-family: "Times New Roman", Times, sans-serif;
+  color: #212121;
+  background-color: #C8E6C9;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+ul#navigationByVue > li > a > div:hover {
+  background-color: #4CAF50;
+  color: #FFFFFF;
 }
 .flex-item {
   background-color: #4CAF50;

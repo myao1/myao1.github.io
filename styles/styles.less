@@ -175,11 +175,6 @@ input:valid{
 	border: 2px solid green;
 }
 
-nav ul li a:hover, nav ul li a div:hover{
-	background-color:@primarycolor;
-	color:@textcolor;
-}
-
 .flex-container{
 	display: -webkit-flex;
 	display: flex;
@@ -199,11 +194,41 @@ nav ul li a:hover, nav ul li a div:hover{
 	//height: 100%;
 }
 
+//navigation bar styling
+ul#navigationByVue>li>a{
+	background-color: @primarycolor;
+	width:auto;
+	height:max-content;
+	margin:10px;
+
+	&:hover{
+		background-color:@primarycolor;
+		color:@textcolor;
+	}
+	> div{
+		padding: 1em 0.5em 1em 0.5em;
+		margin: 0 0.25em 0 0.25em;
+		position: relative;
+		top: -15px;
+		border-radius: 91% 5% 15% / 35% 23% 15%;
+		//border-image: d
+		font-family: "Times New Roman", Times, sans-serif;
+		color: @primarytext;
+		background-color: @lightprimarycolor;
+		font-size: 1.2em;
+		font-weight: bold;
+
+		&:hover{
+			background-color:@primarycolor;
+			color:@textcolor;
+		}
+	}
+}
 .flex-item{
 	background-color: @primarycolor;
-	width: auto;
-	height: max-content;
-	margin: 10px;
+	width:auto;
+	height:max-content;
+	margin:10px;
 
 	> div{
 		padding: 1em 0.5em 1em 0.5em;

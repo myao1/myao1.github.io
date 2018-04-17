@@ -1,248 +1,281 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="my personal website, for testing and playing around">
-		<meta name="author" content="Michael Yao">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="scripts/jquery.colorbox.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="scripts/personal.js"></script>
-		<script src="scripts/personalvue.js"></script>
-		<link rel="stylesheet" id="mainstyle" href="styles/styles.css">
-	</head>
-	<body>
-		<nav class="flex-container-horizontal activeNavigation">
-			<ul>
-				<li>
-					<a href="index.html" id="home" class="flex-item">
-						<div>
-							<svg width="50" height="50">
-								<rect x="0" y="0" width="50" height="50" stroke="red" fill="white" stroke-width="1" />
-								<circle cx="25" cy="25" r="24" stroke="white" fill="red" stroke-width="1" />
-								<circle cx="25" cy="25" r="19" stroke="red" fill="white" stroke-width="1" />
-								<circle cx="25" cy="25" r="14" stroke="white" fill="red" stroke-width="1" />
-								<circle cx="25" cy="25" r="9" stroke="red" fill="white" stroke-width="1" />
-								<circle cx="25" cy="25" r="4" stroke="white" fill="red" stroke-width="1" />
-							</svg>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a href="#aboutme" id="firstnav" class="flex-item">
-						<div>About Me</div>
-					</a>
-				</li>
-				<li>
-					<a href="#bootstrap" id="secondnav" class="flex-item">
-						<div>Bootstrap</div>
-					</a>
-				</li>
-				<li>
-					<a href="#canvasDrawing" id="thirdnav" class="flex-item">
-						<div>Canvas</div>
-					</a>
-				</li>
-				<li>
-					<a href="#changestyles" id="fourthnav" class="flex-item">
-						<div>Style change</div>
-					</a>
-				</li>
-				<li>
-					<a href="#transforms" id="fifthnav" class="flex-item">
-						<div>Transforms</div>
-					</a>
-				</li>
-				<li>
-					<a href="#animations" id="sixthnav" class="flex-item">
-						<div>Animations</div>
-					</a>
-				</li>
-				<li>
-					<a href="#donuts" id="seventhnav" class="flex-item">
-						<div>Donuts</div>
-					</a>
-				</li>
-			</ul>
-		</nav>
-		<main>
-			<section id="aboutme">
-				<article>
-					<header>
-						<h3>About me and this site</h3>
-					</header>
-					<p>This is a <span id="testspan">work in progress</span> site as I experiment and learn.</p>
-					<p>I'm a computer science graduate of Georgia Tech. I enjoy playing video games, rock climbing, and when I can find the time, tinkering around with my computer and this site.</p>
-					<p>I also enjoy <span id="cooking">cooking</span> and learning new information about nearly anything from the behavior of atoms and quarks to the behavior of humans and animals.</p>
-				</article>
-			</section>
-			<section id="bootstrap">
-				<header>
-					<h3>Bootstrap and buttons</h3>
-				</header>
-				<p>Playing wtih bootstrap and bootstrap's assets</P>
-				<div class="container-fluid">
-					<div id="starter" class="row">
-						<div class="col-md-4">
-							<button id="showtest" onclick="toggleDisplay()" class="btn-info">Extra info</button>
-							<div id="moreInfo" class="page-style" style="display:none;">Some extra information that's been hidden
-							</div>
-						</div>
-						<div class="col-md-4">
-							<button id="another">Another action</button>
-						</div>
-						<div class="col-md-4">
-							<button id="warning" class="btn-warning test">Warning</button>
-							<div hidden id="ajaxOutput"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section id="canvasDrawing" class="flex-container-vertical">
-				<button type="button" onclick="canvasDrawing()">Draw!</button>
-				<canvas id="myCanvas" width="500" height="500"></canvas>
-			</section>
-			<section id="changestyles" class="flex-container-vertical">
-				<div class="flex-item">
-					<button type="button" id="colorButton" onclick="changeFontColor('red')">Change color</button>
-					<div id="changetextcolor">
-						<p>
-							Change the color of this text
-						</p>
-					</div>
-					<div>
-						<form>
-							<input id="testInput" type="text"/>
-						</form>
-					</div>
-				</div>
-				<div class="flex-item">
-					<form>
-						<input type="radio" name="pagestyling" id="defaultcss" checked="checked" value="default">Default Style
-						<input type="radio" name="pagestyling" id="alternatecss" value="alternate">Alternate Style
-					</form>
-				</div>
-			</section>
-			<section id="transforms" class="flex-container-vertical page-style">
-				<header>
-					<h3>Transforms on optical illusions</h3>
-				</header>
-				<div class="2d flex-container-vertical" width="1200" height="1000">
-					<div id="2dtransform" class="2d-transform flex-item">
-						<img src="images\hollow-face-illusionartwork-david-mack.jpg" alt="hollow face optical illusion" title="hollow face illusion" width="900" height="636">
-					</div>
-					<div class="flex-item" id="2dbuttons">
-						<button type="button" id="translate" onclick="mytranslate()">Translate</button>
-						<button type="button" id="rotate" onclick="rotate()">Rotate</button>
-						<button type="button" id="scale" onclick="scale()">Scale</button>
-						<button type="button" id="skewX" onclick="skewX()">Skew X</button>
-						<button type="button" id="skewY" onclick="skewY()">Skew Y</button>
-						<button type="button" id="matrix" onclick="matrix()">Matrix</button>
-					</div>
-					<div class="flex-item">
-						<button type="button" id="reset" onclick="reset2d()">Reset</button>
-					</div>
-				</div>
-			</section>
-			<section id="animations" class="flex-container-vertical">
-				<div class="animation">Hello</div>
-			</section>
-			<section id="geolocation" class="flex-container-vertical page-style">
-				<div class="flex-item" id="geography">
-					Placeholder
-				</div>
-				<button type="button" class="flex-button" id="getLocation" onclick="getLocation()">Where am I?</button>
-			</section>
-			<section id="webstorage" class="flex-container-vertical page-style">
-				<div class="flex-item">Lifetime Clicks: </div>
-				<div id="localClicks" class="flex-item">
-					<p>?</p>
-				</div>
-				<button id="localClickButton" class="flex-button" type="button">Click me</button>
-				<div class="flex-item">Session Clicks: </div>
-				<div id="sessionClicks" class="flex-item">
-					<p>?</p>
-				</div>
-				<button id="sessionClickButton" class="flex-button" type="button">Click me</button>
-			</section>
-			<section id="vuecounter" class="flex-container-vertical page-style">
-				<button-counter class="flex-button"></button-counter>
-			</section>
-			<section id="jspatterns" class="flex-container-vertical page-style">
-				<header>
-					<h3>Javascript patterns</h3>
-				</header>
-				<div class="flex-item">
-					<div id="calcOutput"></div>
-				</div>
-			</section>
-			<section id="forms" class="flex-container-vertical page-style">
-				<div id="flex-item">
-					<form>
-						<label>Name:</label>
-						<input type="text" required placeholder="name"><span id="nameValidation" class="pass"></span>
-						<br/>
-						<label>Phone:</label>
-						<input type="tel" required placeholder="555-555-5555">
-						<br/>
-						<label>Email:</label>
-						<input type="email" required>
-						<br/>
-						<label>Colors:</label>
-						<input type="text" list="colors">
-						<datalist id="colors">
-							<option value="Blue" />
-							<option value="White"/>
-						</datalist>
-							
-						<hr/>
-						<input type="button" value="Submit">
-					</form>
-				</div>
-			</section>
-			<section id="details" class="flex-container-vertical page-style">
-				<details>
-					<summary>More details</summary>
-					<ul>
-						<li>something too</li>
-						<li>more things here</li>
-					</ul>
-					<p>some info here</p>
-					<p>more info</p>
-				</details>
-			</section>
-			<section id="lightbox" class="flex-container-vertical page-style">
-				<a href="images/doh.jpg" title="testing" class="img-responsive">Hello Testing this</a>
-				<a href="images/saitama.jpg" title="more testing" class="img-responsive">
-					<img src="images/saitama.jpg" alt="alt text">
-				</a>
-			</section>
-			<section id="donuts" class="flex-container-vertical page-style">
-				<a id="vueDonuts" v-bind:href="dateTheEmail()">
-					<img src="images/donut.png" height="200" width="200">
-				</a>
-			</section>
-			<section id="vue" class="flex-container-vertical page-style">
-				<div>
-					<p v-bind:hidden="isHidden">Hide me</p>
-					<button v-on:click="hideThis">{{ buttonText }}</button>
-				</div>
-				<div id="vuewatchtest">
 
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="my personal website, for testing and playing around">
+	<meta name="author" content="Michael Yao">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="scripts/jquery.colorbox.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="scripts/personal.js"></script>
+	<script src="scripts/personalvue.js"></script>
+	<link rel="stylesheet" id="mainstyle" href="styles/styles.css">
+</head>
+
+<body>
+	<nav class="flex-container-horizontal activeNavigation">
+		<ul id="navigationByVue">
+			<li>
+				<a href="index.html" id="home">
+					<div>
+						<svg width="50" height="50">
+							<rect x="0" y="0" width="50" height="50" stroke="red" fill="white" stroke-width="1" />
+							<circle cx="25" cy="25" r="24" stroke="white" fill="red" stroke-width="1" />
+							<circle cx="25" cy="25" r="19" stroke="red" fill="white" stroke-width="1" />
+							<circle cx="25" cy="25" r="14" stroke="white" fill="red" stroke-width="1" />
+							<circle cx="25" cy="25" r="9" stroke="red" fill="white" stroke-width="1" />
+							<circle cx="25" cy="25" r="4" stroke="white" fill="red" stroke-width="1" />
+						</svg>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#aboutme" id="firstnav">
+					<div>About Me</div>
+				</a>
+			</li>
+			<li>
+				<a href="#bootstrap" id="secondnav">
+					<div>Bootstrap</div>
+				</a>
+			</li>
+			<li>
+				<a href="#canvasDrawing" id="thirdnav">
+					<div>Canvas</div>
+				</a>
+			</li>
+			<li>
+				<a href="#changestyles" id="fourthnav">
+					<div>Style change</div>
+				</a>
+			</li>
+			<li>
+				<a href="#transforms" id="fifthnav">
+					<div>Transforms</div>
+				</a>
+			</li>
+			<li>
+				<a href="#animations" id="sixthnav">
+					<div>Animations</div>
+				</a>
+			</li>
+			<li>
+				<a href="#vue" id="vuenav">
+					<div>Vue</div>
+				</a>
+			</li>
+			<li>
+				<a href="#donuts" id="seventhnav">
+					<div>Donuts</div>
+				</a>
+			</li>
+		</ul>
+	</nav>
+	<main>
+		<section id="aboutme">
+			<article>
+				<header>
+					<h3>About me and this site</h3>
+				</header>
+				<p>This is a
+					<span id="testspan">work in progress</span> site as I experiment and learn.</p>
+				<p>I'm a computer science graduate of Georgia Tech. I enjoy playing video games, rock climbing, and when I can find the
+					time, tinkering around with my computer and this site.</p>
+				<p>I also enjoy
+					<span id="cooking">cooking</span> and learning new information about nearly anything from the behavior of atoms and quarks to the behavior
+					of humans and animals.</p>
+			</article>
+		</section>
+		<section id="bootstrap">
+			<header>
+				<h3>Bootstrap and buttons</h3>
+			</header>
+			<p>Playing wtih bootstrap and bootstrap's assets</P>
+			<div class="container-fluid">
+				<div id="starter" class="row">
+					<div class="col-md-4">
+						<button id="showtest" onclick="toggleDisplay()" class="btn-info">Extra info</button>
+						<div id="moreInfo" class="page-style" style="display:none;">Some extra information that's been hidden
+						</div>
+					</div>
+					<div class="col-md-4">
+						<button id="another">Another action</button>
+					</div>
+					<div class="col-md-4">
+						<button id="warning" class="btn-warning test">Warning</button>
+						<div hidden id="ajaxOutput"></div>
+					</div>
 				</div>
-			</section>
-		</main>
-		<footer>
+			</div>
+		</section>
+		<section id="canvasDrawing" class="flex-container-vertical">
+			<button type="button" onclick="canvasDrawing()">Draw!</button>
+			<canvas id="myCanvas" width="500" height="500"></canvas>
+		</section>
+		<section id="changestyles" class="flex-container-vertical">
+			<div class="flex-item">
+				<button type="button" id="colorButton" onclick="changeFontColor('red')">Change color</button>
+				<div id="changetextcolor">
+					<p>
+						Change the color of this text
+					</p>
+				</div>
+				<div>
+					<form>
+						<input id="testInput" type="text" />
+					</form>
+				</div>
+			</div>
+			<div class="flex-item">
+				<form>
+					<input type="radio" name="pagestyling" id="defaultcss" checked="checked" value="default">Default Style
+					<input type="radio" name="pagestyling" id="alternatecss" value="alternate">Alternate Style
+				</form>
+			</div>
+		</section>
+		<section id="transforms" class="flex-container-vertical page-style">
+			<header>
+				<h3>Transforms on optical illusions</h3>
+			</header>
+			<div class="2d flex-container-vertical" width="1200" height="1000">
+				<div id="2dtransform" class="2d-transform flex-item">
+					<img src="images\hollow-face-illusionartwork-david-mack.jpg" alt="hollow face optical illusion" title="hollow face illusion"
+					 width="900" height="636">
+				</div>
+				<div class="flex-item" id="2dbuttons">
+					<button type="button" id="translate" onclick="mytranslate()">Translate</button>
+					<button type="button" id="rotate" onclick="rotate()">Rotate</button>
+					<button type="button" id="scale" onclick="scale()">Scale</button>
+					<button type="button" id="skewX" onclick="skewX()">Skew X</button>
+					<button type="button" id="skewY" onclick="skewY()">Skew Y</button>
+					<button type="button" id="matrix" onclick="matrix()">Matrix</button>
+				</div>
+				<div class="flex-item">
+					<button type="button" id="reset" onclick="reset2d()">Reset</button>
+				</div>
+			</div>
+		</section>
+		<section id="animations" class="flex-container-vertical">
+			<div class="animation">Hello</div>
+		</section>
+		<section id="geolocation" class="flex-container-vertical page-style">
+			<div class="flex-item" id="geography">
+				Placeholder
+			</div>
+			<button type="button" class="flex-button" id="getLocation" onclick="getLocation()">Where am I?</button>
+		</section>
+		<section id="webstorage" class="flex-container-vertical page-style">
+			<div class="flex-item">Lifetime Clicks: </div>
+			<div id="localClicks" class="flex-item">
+				<p>?</p>
+			</div>
+			<button id="localClickButton" class="flex-button" type="button">Click me</button>
+			<div class="flex-item">Session Clicks: </div>
+			<div id="sessionClicks" class="flex-item">
+				<p>?</p>
+			</div>
+			<button id="sessionClickButton" class="flex-button" type="button">Click me</button>
+		</section>
+		<section id="vuecounter" class="flex-container-vertical page-style">
+			<button-counter class="flex-button"></button-counter>
+		</section>
+		<section id="jspatterns" class="flex-container-vertical page-style">
+			<header>
+				<h3>Javascript patterns</h3>
+			</header>
+			<div class="flex-item">
+				<div id="calcOutput"></div>
+			</div>
+		</section>
+		<section id="forms" class="flex-container-vertical page-style">
+			<div id="flex-item">
+				<form>
+					<label>Name:</label>
+					<input type="text" required placeholder="name">
+					<span id="nameValidation" class="pass"></span>
+					<br/>
+					<label>Phone:</label>
+					<input type="tel" required placeholder="555-555-5555">
+					<br/>
+					<label>Email:</label>
+					<input type="email" required>
+					<br/>
+					<label>Colors:</label>
+					<input type="text" list="colors">
+					<datalist id="colors">
+						<option value="Blue" />
+						<option value="White" />
+					</datalist>
+
+					<hr/>
+					<input type="button" value="Submit">
+				</form>
+			</div>
+		</section>
+		<section id="details" class="flex-container-vertical page-style">
 			<details>
-				<summary>Created by Michael Yao</summary>
-				<p>Last updated on <time datetime="2018-04-10">this day</time>.</p>
+				<summary>More details</summary>
+				<ul>
+					<li>something too</li>
+					<li>more things here</li>
+				</ul>
+				<p>some info here</p>
+				<p>more info</p>
 			</details>
-		</footer>
-		<script>
-			$('a.img-responsive').colorbox();
-		</script>
-	</body>
+		</section>
+		<section id="lightbox" class="flex-container-vertical page-style">
+			<a href="images/doh.jpg" title="testing" class="img-responsive">Hello Testing this</a>
+			<a href="images/saitama.jpg" title="more testing" class="img-responsive">
+				<img src="images/saitama.jpg" alt="alt text">
+			</a>
+		</section>
+		<section id="donuts" class="flex-container-vertical page-style">
+			<a id="vueDonuts" v-bind:href="dateTheEmail()">
+				<img src="images/donut.png" height="200" width="200">
+			</a>
+		</section>
+		<section id="vue" class="flex-container-vertical page-style">
+			<div id="vueHide">
+				<p v-bind:hidden="isHidden">Hide me</p>
+				<button v-on:click="hideThis">{{ buttonText }}</button>
+				<ul>
+					<li v-for="item in items" :key="item.id" v-show="item.show">
+						<p>{{item.content}} :: {{item.value}} | {{item.show}}</p>
+					</li>
+				</ul>
+				<label>Key:</label>
+				<input id="vuekeyinput" value="firsttest">
+				<label>Value:</label>
+				<input id="vuevalueinput" value="my test">
+				<button v-on:click="hellofunction(document.getElementById('vuekeyinput').value,document.getElementById('vuevalueinput').value)">Hi thar!</button>
+			</div>
+			<div id="vuewatchtest">
+
+			</div>
+			<div id="vueforpractice">
+				<ul>
+					<li v-for="(item, index) in items" v-if="!item.anotherValue">
+						<p>{{ parentData }} {{ somethingData }}: {{ item.content}} - {{ item.anotherValue }}</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<details>
+			<summary>Created by Michael Yao</summary>
+			<p>Last updated on
+				<time datetime="2018-04-10">this day</time>.</p>
+		</details>
+	</footer>
+	<script>
+		$('a.img-responsive').colorbox();
+	</script>
+</body>
+
 </html>
