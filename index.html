@@ -19,7 +19,7 @@
 
 <body>
 	<nav class="flex-container-horizontal activeNavigation">
-		<ul id="navigationByVue">
+		<ul id="navigationByVue" class="navigationByVue">
 			<li>
 				<a href="index.html" id="home">
 					<div>
@@ -34,46 +34,9 @@
 					</div>
 				</a>
 			</li>
-			<li>
-				<a href="#aboutme" id="firstnav">
-					<div>About Me</div>
-				</a>
-			</li>
-			<li>
-				<a href="#bootstrap" id="secondnav">
-					<div>Bootstrap</div>
-				</a>
-			</li>
-			<li>
-				<a href="#canvasDrawing" id="thirdnav">
-					<div>Canvas</div>
-				</a>
-			</li>
-			<li>
-				<a href="#changestyles" id="fourthnav">
-					<div>Style change</div>
-				</a>
-			</li>
-			<li>
-				<a href="#transforms" id="fifthnav">
-					<div>Transforms</div>
-				</a>
-			</li>
-			<li>
-				<a href="#animations" id="sixthnav">
-					<div>Animations</div>
-				</a>
-			</li>
-			<li>
-				<a href="#vue" id="vuenav">
-					<div>Vue</div>
-				</a>
-			</li>
-			<li>
-				<a href="#donuts" id="seventhnav">
-					<div>Donuts</div>
-				</a>
-			</li>
+			<vue-nav-li v-for="navItem in navigationItems" v-bind:key="navItem.id" v-bind:navlink="navItem">
+
+			</vue-nav-li>
 		</ul>
 	</nav>
 	<main>
@@ -254,8 +217,8 @@
 				<input id="vuevalueinput" value="my test">
 				<button v-on:click="hellofunction(document.getElementById('vuekeyinput').value,document.getElementById('vuevalueinput').value)">Hi thar!</button>
 			</div>
-			<div id="vuewatchtest">
-
+			<div id="vuecounter">
+				<button-counter></button-counter>
 			</div>
 			<div id="vueforpractice">
 				<ul>
