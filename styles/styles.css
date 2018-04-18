@@ -147,17 +147,17 @@ input:valid {
   height: auto;
   flex-direction: column;
 }
-ul#navigationByVue > li > a {
+ul.navigationByVue > li > a {
   background-color: #4CAF50;
   width: auto;
   height: max-content;
   margin: 10px;
 }
-ul#navigationByVue > li > a:hover {
+ul.navigationByVue > li > a:hover {
   background-color: #4CAF50;
   color: #FFFFFF;
 }
-ul#navigationByVue > li > a > div {
+ul.navigationByVue > li > a > div {
   padding: 1em 0.5em 1em 0.5em;
   margin: 0 0.25em 0 0.25em;
   position: relative;
@@ -169,7 +169,7 @@ ul#navigationByVue > li > a > div {
   font-size: 1.2em;
   font-weight: bold;
 }
-ul#navigationByVue > li > a > div:hover {
+ul.navigationByVue > li > a > div:hover {
   background-color: #4CAF50;
   color: #FFFFFF;
 }

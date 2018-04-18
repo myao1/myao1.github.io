@@ -1,20 +1,26 @@
 window.onload = function () {
-    var navigationElements = [
-        {name: "Home", id:"home", class:"nav-flex-item"},
-        {name: "About Me", id:"aboutme", class:"nav flex-item"},
-        {name: "Bootstrap", id:"bootstrap", class:"nav flex-item"},
-        {name: "Canvas", id:"canvasdrawing", class:"nav flex-item"},
-        {name: "Change Style", id:"changestyles", class:"nav flex-item"},
-        {name: "Transforms", id:"transforms", class:"nav flex-item"},
-        {name: "Animations", id:"animations", class:"nav flex-item"},
-        {name: "Donuts", id:"donuts", class:"nav flex-item"},
-        {name: "Vue", id:"vue", class:"nav flex-item"}
-    ]
-    
-    var vueNav = new Vue({
+    var navigationTabs = [
+        {id: 0, text: "About Me", htmlid:"aboutme", link:"#aboutme"},
+        {id: 1, text: "Bootstrap", htmlid:"bootstrap", link:"#bootstrap"},
+        {id: 2, text: "Canvas", htmlid:"canvasdrawing", link:"#canvasDrawing"},
+        {id: 3, text: "Change Style", htmlid:"changestyles", link:"#changestyles"},
+        {id: 4, text: "Transforms", htmlid:"transforms", link:"#transforms"},
+        {id: 5, text: "Animations", htmlid:"animations", link:"#animations"},
+        {id: 6, text: "Donuts", htmlid:"donuts", link:"#donuts"},
+        {id: 7, text: "Vue", htmlid:"vue", link:"#vue"}
+    ];
 
+    Vue.component('vue-nav-li', {
+        props: ['navlink'],
+        template: '<li><a :href="navlink.link" :id="navlink.htmlid"><div>{{ navlink.text }}</div></a></li>'
     });
     
+    var NavigationVue = new Vue({
+        el: "#navigationByVue",
+        data: {
+            navigationItems: navigationTabs
+        }
+    });
     
     var crazyDataObj = {
         thursday: "blursday",
@@ -163,17 +169,17 @@ window.onload = function () {
     //     }
     // });
 
-    // Vue.component('button-counter',
-    //     {
-    //         data: function () {
-    //             return {
-    //                 count: 0
-    //             }
-    //         },
-    //         template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-    //     }
-    // );
+    Vue.component('button-counter',
+        {
+            data: function () {
+                return {
+                    count: 0
+                }
+            },
+            template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+        }
+    );
 
-    //new Vue({ el: '#vuecounter' });
+    new Vue({ el: '#vuecounter' });
     
 }
