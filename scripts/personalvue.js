@@ -12,11 +12,11 @@ window.onload = function () {
 
     Vue.component('vue-nav-li', {
         props: ['navlink'],
-        template: '<li><a :href="navlink.link" :id="navlink.htmlid"><div>{{ navlink.text }}</div></a></li>'
+        template: '<li><a v-bind:href="navlink.link"><div>{{ navlink.text }}</div></a></li>'
     });
     
     var NavigationVue = new Vue({
-        el: "#navigationByVue",
+        el: "#Vue-nav",
         data: {
             navigationItems: navigationTabs
         }

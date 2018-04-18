@@ -19,7 +19,7 @@
 
 <body>
 	<nav class="flex-container-horizontal activeNavigation">
-		<ul id="navigationByVue" class="navigationByVue">
+		<ul id="Vue-nav" class="navigationByVue">
 			<li>
 				<a href="index.html" id="home">
 					<div>
@@ -35,7 +35,6 @@
 				</a>
 			</li>
 			<vue-nav-li v-for="navItem in navigationItems" v-bind:key="navItem.id" v-bind:navlink="navItem">
-
 			</vue-nav-li>
 		</ul>
 	</nav>
