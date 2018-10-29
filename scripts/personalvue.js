@@ -1,15 +1,15 @@
 window.onload = function () {
     var navigationTabs = [
-        {id: 0, text: "About Me", htmlid:"aboutme", link:"#aboutme"},
-        {id: 1, text: "Bootstrap", htmlid:"bootstrap", link:"#bootstrap"},
-        {id: 2, text: "Canvas", htmlid:"canvasdrawing", link:"#canvasDrawing"},
-        {id: 3, text: "Change Style", htmlid:"changestyles", link:"#changestyles"},
-        {id: 4, text: "Transforms", htmlid:"transforms", link:"#transforms"},
-        {id: 5, text: "Animations", htmlid:"animations", link:"#animations"},
+        {id: 0, text: "About Me", link:"#aboutme"},
+        {id: 1, text: "Bootstrap", link:"#bootstrap"},
+        {id: 2, text: "Canvas", link:"#canvasDrawing"},
+        {id: 3, text: "Change Style", link:"#changestyles"},
+        {id: 4, text: "Transforms", link:"#transforms"},
+        {id: 5, text: "Animations", link:"#animations"},
         {id: 8, text: "Geolocation", link: "#geolocation"},
         {id: 9, text: "Storage", link: "#webstorage"},
-        {id: 6, text: "Donuts", htmlid:"donuts", link:"#donuts"},
-        {id: 7, text: "Vue", htmlid:"vue", link:"#vue"}
+        {id: 6, text: "Donuts", link:"#donuts"},
+        {id: 7, text: "Vue", link:"#vue"}
     ];
 
     var NavigationComponent = Vue.component('vue-nav-li', {
@@ -134,7 +134,7 @@ window.onload = function () {
     var donutVue = new Vue({
         el: '#vueDonuts',
         data: {
-            emailRoot: "mailto:?bcc=Craig.Trulove@perficient.com;Zach.Gay@perficient.com;Venice.Thacker@perficient.com;Will.Sullivan@perficient.com;michael.yao@perficient.com;Chase.Spivey@perficient.com;Matt.Haneburger@perficient.com;Shu.Jackson@perficient.com;Courtney.Dean@perficient.com;Jason.Barrett@perficient.com;george.chang@perficient.com;Nick.Sturdivant@perficient.com;Brian.Ball@perficient.com;Ryan.Selley@perficient.com;TL.Stephanchick@perficient.com;Corey.Smith@perficient.com;Justin.Combs@perficient.com;matt.connolly@perficient.com;bill.veldman@perficient.com;mike.ball@perficient.com;Jeffrey.Correa@perficient.com;Larry.Thomas@perficient.com;ravind.budhiraja@perficient.com;Marshall.Sorenson@perficient.com;Amelie.VonFluegge@perficient.com;Joshua.Hulsey@perficient.com&subject=Donuts!&body=Hey everyone, %0D%0A%0D%0AI'll be bringing in donuts",
+            emailRoot: "mailto:?bcc=Craig.Trulove@perficient.com;Amber.Fuller@perficient.com;Hunter.Smith@perficient.com;Jack.Marsh@perficient.com;Lucas.Smith@perficient.com;Jeremy.Sao@perficient.com;Genevieve.Palmich@perficient.com;Zach.Gay@perficient.com;Venice.Thacker@perficient.com;Will.Sullivan@perficient.com;michael.yao@perficient.com;Chase.Spivey@perficient.com;Matt.Haneburger@perficient.com;Shu.Jackson@perficient.com;Courtney.Dean@perficient.com;Jason.Barrett@perficient.com;george.chang@perficient.com;Nick.Sturdivant@perficient.com;Brian.Ball@perficient.com;Ryan.Selley@perficient.com;TL.Stephanchick@perficient.com;Corey.Smith@perficient.com;Justin.Combs@perficient.com;matt.connolly@perficient.com;bill.veldman@perficient.com;mike.ball@perficient.com;Jeffrey.Correa@perficient.com;Larry.Thomas@perficient.com;ravind.budhiraja@perficient.com;Marshall.Sorenson@perficient.com;Amelie.VonFluegge@perficient.com;Joshua.Hulsey@perficient.com&subject=Donuts!&body=Hey everyone, %0D%0A%0D%0AI'll be bringing in donuts",
         },
         methods: {
             dateTheEmail: function () {
