@@ -177,14 +177,14 @@ window.onload = function () {
     var donutVue = new Vue({
         el: '#vueDonuts',
         computed: {
+            emailRoot () { 
+                return `mailto:?bcc=${this.recipientList}&subject=Donuts!&body=Hey everyone, %0D%0A%0D%0AI'll be bringing in donuts`;
+            },
             recipientList () {
                 return recipients.map(name => {
                     return name.replace(' ', '.').concat('@perficient.com');
                 }).join(';');
             }
-        },
-        data: {
-            emailRoot: `mailto:?bcc=${this.recipientList}&subject=Donuts!&body=Hey everyone, %0D%0A%0D%0AI'll be bringing in donuts`,
         },
         methods: {
             dateTheEmail: function () {
